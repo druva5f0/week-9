@@ -1,37 +1,50 @@
-# WEEK 9: JSON / YAML GENERATION
+ # WEEK 8: STRUCTURED FORMAT PROMPTING
  
-import json
+print("===== WEEK 8: STRUCTURED FORMAT PROMPTING =====")
  
-print("===== WEEK 9: JSON / YAML GENERATION =====")
- 
-student = {
-    "name": "Ravi Kumar",
-    "course": "M.Tech",
-    "branch": "CSE",
-    "year": 1,
-    "skills": [
-        "Python",
-        "Machine Learning",
-        "Artificial Intelligence"
-    ]
-}
- 
-print("\n--- JSON OUTPUT ---")
- 
-json_output = json.dumps(student, indent=4)
-print(json_output)
- 
-print("\n--- YAML OUTPUT ---")
- 
-yaml_output = f"""
-name: {student['name']}
-course: {student['course']}
-branch: {student['branch']}
-year: {student['year']}
-skills:
-  - {student['skills'][0]}
-  - {student['skills'][1]}
-  - {student['skills'][2]}
+normal_prompt = """
+Explain Artificial Intelligence.
 """
  
-print(yaml_output)
+structured_prompt = """
+Explain Artificial Intelligence using the following format:
+ 
+TITLE:
+Artificial Intelligence
+ 
+DEFINITION:
+Give a simple definition of Artificial Intelligence.
+ 
+FEATURES:
+1. Feature 1
+2. Feature 2
+3. Feature 3
+ 
+APPLICATIONS:
+1. Application 1
+2. Application 2
+3. Application 3
+ 
+ADVANTAGES:
+1. Advantage 1
+2. Advantage 2
+3. Advantage 3
+ 
+EXAMPLE:
+Give one simple real-world example.
+ 
+CONCLUSION:
+Give a short conclusion.
+ 
+Constraints:
+- Use simple English.
+- Keep the answer under 200 words.
+- Follow the exact structure given above.
+"""
+ 
+print("\n--- NORMAL PROMPT ---")
+print(normal_prompt)
+print("\n--- STRUCTURED FORMAT PROMPT ---")
+print(structured_prompt)
+ 
+
